@@ -2,6 +2,8 @@ package com.vekrest.vekconsumer.vekconsumer.consumer;
 
 import com.vekrest.vekconsumer.vekconsumer.entities.Client;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.RetryableTopic;
 import org.springframework.kafka.retrytopic.TopicSuffixingStrategy;
@@ -11,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ClientRegisteredConsumer {
+    private static final Logger LOG = LoggerFactory.getLogger(ClientRegisteredConsumer.class);
+
     @RetryableTopic(
             autoCreateTopics = "false",
             backoff = @Backoff(
@@ -25,7 +29,6 @@ public class ClientRegisteredConsumer {
             groupId = "${spring.kafka.consumer.group-id}"
     )
     public void listener(@Payload ConsumerRecord<String, Client> consumerRecord) {
-        System.out.println("KEY: " + consumerRecord.key());
-        System.out.println("VALUE: " + consumerRecord.value());
+        LOG.info("VEKCONSUMER -> Um cliente deseja realizar cadastro: {}!", consumerRecord.value().toString());
     }
 }
