@@ -22,8 +22,7 @@ public class ClientRegisteredConsumer {
     )
     @KafkaListener(
             topics = "${spring.kafka.topic.client.registered}",
-            groupId = "${spring.kafka.consumer.group-id}",
-            containerFactory = "kafkaListenerFactory"
+            groupId = "${spring.kafka.consumer.group-id}"
     )
     public void listener(@Payload ConsumerRecord<String, Client> consumerRecord) {
         System.out.println("KEY: " + consumerRecord.key());
