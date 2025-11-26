@@ -21,7 +21,7 @@ public class ClientRegisteredConsumer {
             topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE
     )
     @KafkaListener(
-            topics = "${spring.kafka.topic.coxinha}",
+            topics = "${spring.kafka.topic.client.registered}",
             groupId = "${spring.kafka.consumer.group-id}",
             containerFactory = "kafkaListenerFactory"
     )
