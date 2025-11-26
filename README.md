@@ -1,6 +1,6 @@
 # 🧬 Projeto VekRest - VekConsumer - Módulo 4
 
-Producer VekRest: producer kafka via Spring Boot com Docker e Maven. **Módulo 4 / Producer**
+Consumer VekRest: consumer kafka via Spring Boot com Docker e Maven. **Módulo 4 / Consumer 1**
 
 > ATENÇÃO: VÁ ATÉ OS REPOSITÓRIOS DAS PARTES DO MÓDULO 4 E SIGA AS INSTRUÇÕES DE EXECUÇÃO DO README DE CADA APLICAÇÃO PARA RODAR A APLICAÇÃO COMPLETA!
 
