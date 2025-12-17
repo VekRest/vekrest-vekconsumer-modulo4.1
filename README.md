@@ -12,7 +12,9 @@ Consumer VekRest: consumer kafka via Spring Boot com Docker e Maven. **Módulo 4
 | VekConsumerAPI | Consumer REST - Consumer Kafka com API REST | [Repositório VekConsumerRest Módulo 4](https://github.com/VekRest/vekrest-vekconsumerapi-modulo4.2) 
 
 > Este projeto depende das outras duas aplicações (VekProducer e VekConsumerAPI) para funcionar corretamente.
+
 > Faça o build no docker das outras aplicações ou utilize as imagens do DockerHub para rodar os containers necessários.
+
 > Por último, suba os containers do projeto VekProducer para completar o ambiente.
 
 ---
@@ -101,103 +103,6 @@ docker-compose up -d
 
 ---
 
-## 📘 Estrutura do Projeto
-
-```
-
-📂 vekrest-vekconsumer-modulo4.1/
-├── 📁 .commands                                ← Pasta de comandos .bat para automatizar na execução/build
-├── 📁 .github                                  ← Pasta de configuração da esteira CI/CD do Github Actions
-├── 📁 .run                                     ← Pasta de configurações da IDE para facilitar execução local
-├── 📁 src                                      ← Módulo principal da aplicação, construído com dependências do Spring
-    ├── 📁 [...]/java                           ← Pasta princípal do projeto (App)
-            ├── 📁 consumer/                    ← Lógica de consumo do Kafka
-            ├── 📁 entities/                    ← Entidades da aplicação
-                📄 VekconsumerApplication.java  ← Classe principal do Spring Boot
-    ├── 📁 [...]/resources                      ← Variáveis de ambiente
-├── 📄 docker-compose.yml                       ← Configuração dos containers utilizados
-├── 📄 Dockerfile                               ← Configuração para build e deploy no Docker
-├── 📄 LICENCE.txt                              ← Arquivo de Licença GPL-3.0
-├── 📄 pom.xml                                  ← Arquivo de Build do Maven
-├── 📄 README.md                                ← Este arquivo de documentação
-
-````
-
----
-
-## ⚙️ Objetivo
-
-Módulo 4
-Crie três aplicações Spring Boot com Kafka:
-
-1 produtor
-
-2 consumidores
-
-Requisitos:
-
-Garanta que uma mensagem enviada pelo produtor seja consumida pelas duas aplicações.
-
-Configure corretamente o Group ID no Kafka.
-
-Garanta resiliência com três brokers Kafka.
-
-Configure cinco partições para garantir redundância e melhor paralelismo na leitura das mensagens.
-
----
-
-## 🧩 Tecnologias Utilizadas
-
-- **Spring Boot** → Framework Back-End
-- **Java** → Linguagem de programação
-- **Maven** → Build
-- **Docker** → Containers e virtualização
-- **Docker Hub** → Repositório de imagens Docker
-- **Kafka** → Mensageria
-- **Zookeeper** → Gerenciamento do Kafka
-- **MongoDB** → Banco de Dados NoSQL
-- **OpenSearch e Graylog** → Logs da Aplicação
-- **SonarQube** → Qualidade
-- **Github Actions** → CI/CD automatizado
-- **.bat** → Scripts para automatizar processos no Windows
-
----
-
-## 📌 Status do Projeto
-> 🚀 Release [v1.0.0](https://github.com/VekRest/vekrest-vekconsumer-modulo4.1/tree/v1.0.0) - Primeira versão
-
-[//]: # (- 🚧 Em desenvolvimento – Release v2.0-iot-alpha)
-
----
-
-## 📜 Licença
-> Este projeto é distribuído sob a licença GPL-3.0. Consulte o arquivo [LICENCE](LICENSE.txt)
-para mais detalhes.
-
----
-
-## ✅ Qualidade (SonarQube)
-
-> Este projeto tem qualidade analisada pelo SonarQube Cloud. Verifique nos badges!
-
-[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=vekconsumer&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=alert_status&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=bugs&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=code_smells&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=coverage&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=duplicated_lines_density&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=ncloc&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=reliability_rating&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=security_rating&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=sqale_index&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=sqale_rating&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=vekconsumer&metric=vulnerabilities&token=20d669e312f102c52a0ebbc9f9149d4b6cd876f6)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
-
-
----
-
 ## 📦 Instalação e Configuração do Ambiente
 
 ### 1️⃣ Clone o projeto na sua máquina e baixe as dependências:
@@ -214,9 +119,7 @@ cd vekrest-vekconsumer-modulo4.1
 # Suba os containers necessários (MongoDB, Redis, OpenSearch, Graylog)
 docker-compose up -d
 
-# Agora abra o projeto na sua IDE (IntelliJ, Eclipse, VSCode, etc) e rode a aplicação Spring Boot
-# Ou, se preferir, rode via terminal com properties-local:
-mvn spring-boot:run -pl spring -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=local"
+# Rode o projeto via Maven
 ```
 
 ### 3️⃣ (Opcional) Alternativamente, se quiser rodar via container localmente:
@@ -277,21 +180,34 @@ POST http://localhost:8083/vekrest/vekproducer/v1/client
 
 ---
 
+## 🧩 Tecnologias Utilizadas
+
+- **Spring Boot** → Framework Back-End
+- **Java** → Linguagem de programação
+- **Maven** → Build
+- **Docker** → Containers e virtualização
+- **Docker Hub** → Repositório de imagens Docker
+- **Kafka** → Mensageria
+- **Zookeeper** → Gerenciamento do Kafka
+- **MongoDB** → Banco de Dados NoSQL
+- **OpenSearch e Graylog** → Logs da Aplicação
+- **SonarQube** → Qualidade
+- **Github Actions** → CI/CD automatizado
+- **.bat** → Scripts para automatizar processos no Windows
+
+---
+
+## ✅ Qualidade (SonarQube)
+
+> Este projeto tem qualidade analisada pelo SonarQube Cloud. Verifique nos badges!
+
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=vekconsumer)
+
+---
+
 ## 📦 Esteira CI/CD Automatizada com Github Actions
 
-> A esteira CI/CD deste projeto é automatizada via Github Actions. A cada tag criada ou execução manual na branch main, a esteira é disparada.
-
-###  Steps da esteira:
-
-1️⃣ Verificação de **Vulnerabilidades** com o **Trivy** (Security)
-
-2️⃣ Análise do **Sonar Cloud** (Quality)
-
-3️⃣ Deploy da imagem do container no **DockerHub e Github Packages** (Deploy)
-
-4️⃣ Deploy do Maven Artifact no **Github Packages** (Deploy)
-
-5️⃣ Deploy da Release no **Github** (Release)
+> A esteira CI/CD deste projeto é automatizada via Github Actions. A cada tag criada a esteira é disparada.
 
 ### Para executar a Esteira pelo trigger:
 ```bash
@@ -306,26 +222,8 @@ git push origin <version>
 
 ---
 
-## 💡 Observações Importantes
-
-* Este projeto cumpre com o **Módulo 4 da Atividade**
-* Para este módulo, existem três aplicações: o producer [VekProducer](https://github.com/VekRest/vekrest-vekproducer-modulo4), **esta aplicação** e o consumer rest api [VekConsumerAPI](https://github.com/VekRest/vekrest-vekconsumerapi-modulo4.2)
-
----
-
 ## Postman Collection
 
 > Link para download da coleção Postman utilizada nos testes da API: [Postman Collection VekRest](https://www.postman.com/aviation-pilot-88658184/workspace/my-workspace/folder/33703402-dad9baf5-9c1b-4010-a4c7-7ace385191fd?action=share&source=copy-link&creator=33703402&ctx=documentation)
-
----
-
-## ✍️ Autor
-
-<div align="center">
-
-| [<img src="https://avatars.githubusercontent.com/u/98980071" width=115><br><sub>Victor Cardoso</sub>](https://github.com/vek03)
-| :---: |
-
-</div>
 
 ---
